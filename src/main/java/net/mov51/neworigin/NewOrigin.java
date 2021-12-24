@@ -1,6 +1,8 @@
 package net.mov51.neworigin;
 
 import net.luckperms.api.LuckPerms;
+import net.mov51.neworigin.originCommand.NewOriginCommand;
+import net.mov51.neworigin.originCommand.NewOriginTabComplete;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -30,7 +32,10 @@ public final class NewOrigin extends JavaPlugin {
             logger.info("LuckPerms dependency loaded!");
         }
 
-        Objects.requireNonNull(this.getCommand("NewOrigin")).setExecutor(new SetOrigin());
+        Objects.requireNonNull(this.getCommand("NewOrigin")).setExecutor(new NewOriginCommand());
+        Objects.requireNonNull(getCommand("NewOrigin")).setTabCompleter(new NewOriginTabComplete());
+
+        logger.info("Your Origins can now be REDEFINED!");
     }
 
     @Override

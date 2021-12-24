@@ -26,21 +26,6 @@ public class LpHelper {
         }
     }
 
-    public enum PermissionNode {
-        topLevelPermissionNode("NewOrigin."),
-
-        set(topLevelPermissionNode.node + "set"),
-        get(topLevelPermissionNode.node + "get"),
-        watch(topLevelPermissionNode.node + "watch"),
-        unWatch(topLevelPermissionNode.node + "unWatch");
-
-        final String node;
-
-        PermissionNode(String node){
-            this.node = node;
-        }
-    }
-
     public static String getMetaValue(Player p, MetaKey metaKey){
         // obtain CachedMetaData - the easiest way is via the PlayerAdapter
         // of course, you can get it via a User too if the player is offline.

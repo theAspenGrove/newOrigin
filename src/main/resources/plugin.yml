@@ -7,4 +7,44 @@ depend: [LuckPerms]
 commands:
   NewOrigin:
     description: base plugin help <3
+    permission: neworigin.origin
     usage: /NewOrigin
+    permission-message: You lack the power to define your own origin.
+  NewOrigin set:
+    description: base plugin help <3
+    permission: neworigin.set
+    usage: /NewOrigin
+    permission-message: You lack the power to define your own origin.
+  NewOrigin get:
+    description: base plugin help <3
+    permission: neworigin.get
+    usage: /NewOrigin
+    permission-message: You lack the power to define your own origin.
+  NewOrigin watch:
+    description: base plugin help <3
+    permission: neworigin.watch
+    usage: /NewOrigin
+    permission-message: You lack the power to define your own origin.
+  NewOrigin unWatch:
+    description: base plugin help <3
+    permission: neworigin.unWatch
+    usage: /NewOrigin
+    permission-message: You lack the power to define your own origin.
+
+
+permissions:
+  neworigin.origin:
+    description: Accsess to the base NewOrigin command
+    default: true
+  neworigin.set:
+    description: Set your own origin
+    default: true
+  neworigin.get:
+    description: Set your own origin
+    default: true
+  neworigin.watch:
+    description: Watch your distance from your origin
+    default: true
+  neworigin.unWatch:
+    description: Stop watching your distance from your origin
+    default: true
