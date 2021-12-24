@@ -1,0 +1,10 @@
+name: NewOrigin
+version: ${project.version}
+main: net.mov51.neworigin.NewOrigin
+api-version: 1.16
+depend: [LuckPerms]
+
+commands:
+  NewOrigin:
+    description: base plugin help <3
+    usage: /NewOrigin
