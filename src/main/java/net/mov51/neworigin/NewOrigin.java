@@ -4,6 +4,7 @@ import net.luckperms.api.LuckPerms;
 import net.mov51.neworigin.helpers.PlayerLoop;
 import net.mov51.neworigin.originCommand.NewOriginCommand;
 import net.mov51.neworigin.originCommand.NewOriginTabComplete;
+import net.mov51.periderm.ChatHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,6 +17,7 @@ public final class NewOrigin extends JavaPlugin {
     public static LuckPerms LPapi;
     public static Logger logger;
     public static PlayerLoop playerLoop;
+    public static ChatHelper chatHelper;
 
     public static org.bukkit.plugin.Plugin plugin = null;
 
@@ -35,6 +37,8 @@ public final class NewOrigin extends JavaPlugin {
 
         Objects.requireNonNull(this.getCommand("NewOrigin")).setExecutor(new NewOriginCommand());
         Objects.requireNonNull(getCommand("NewOrigin")).setTabCompleter(new NewOriginTabComplete());
+
+        chatHelper = new ChatHelper("New Origin");
 
         logger.info("Your Origins can now be REDEFINED!");
     }

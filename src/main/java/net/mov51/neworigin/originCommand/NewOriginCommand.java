@@ -1,6 +1,6 @@
 package net.mov51.neworigin.originCommand;
 
-import net.mov51.periderm.AspenMetaKey;
+import net.mov51.periderm.helperObjects.AspenMetaKey;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,7 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static net.mov51.neworigin.helpers.Locations.LocationToString;
+import static net.mov51.neworigin.NewOrigin.chatHelper;
+import static net.mov51.periderm.Locations.*;
 import static net.mov51.periderm.LuckPermsHelper.*;
 import static net.mov51.neworigin.NewOrigin.playerLoop;
 import static net.mov51.neworigin.originCommand.NewOriginCommand.commands.*;
@@ -56,27 +57,30 @@ public class NewOriginCommand implements CommandExecutor {
                 //set command
                 Location l = p.getLocation().toBlockLocation();
                 String LString = LocationToString(l);
-                //todo tell player they set their origin
+                chatHelper.sendChat(p,"Your Origin is now set to " + PrettyBlockLocation(l) + "!");
+                chatHelper.sendChat(p,"Run /newOrigin watch to start watching it!");
                 setMetaValue(p,Origin,LString);
                 return true;
             }else if(args[0].equalsIgnoreCase(get.SubCommand) && p.hasPermission(get.Permission)){
                 //get command
-                //todo give player their origin location
-                System.out.println(getMetaValue(p,Origin));
+                chatHelper.sendChat(p,"Your Origin is currently set to "+ PrettyBlockLocation(LocationFromString(getMetaValue(p,Origin))) + ".");
                 return true;
             }else if(args[0].equalsIgnoreCase(watch.SubCommand) && p.hasPermission(watch.Permission)){
                 //watch command
                 if(!playerLoop.Players.contains(p.getUniqueId())){
-                    //todo tell players they are now watching
+                    chatHelper.sendChat(p,"You are now watching your Origin!");
                     playerLoop.Players.add(p.getUniqueId());
-                }//else{
-                // todo tell players they were already watching
-                //}
+                }else{
+                chatHelper.sendChat(p,"Sorry, you're already watching your Origin.");
+                }
                 return true;
             }else if(args[0].equalsIgnoreCase(unWatch.SubCommand) && p.hasPermission(unWatch.Permission)){
                 //stop watching command
-                //todo tell players they are no longer watching
-                playerLoop.Players.remove(p.getUniqueId());
+                if(playerLoop.Players.remove(p.getUniqueId())){
+                    chatHelper.sendChat(p,"You are no longer watching your Origin.");
+                }else{
+                    chatHelper.sendChat(p,"You weren't watching your Origin!");
+                }
                 return true;
             }
         }

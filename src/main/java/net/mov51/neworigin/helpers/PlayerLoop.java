@@ -13,7 +13,7 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import static net.mov51.neworigin.helpers.Locations.LocationFromString;
+import static net.mov51.periderm.Locations.LocationFromString;
 import static net.mov51.neworigin.originCommand.NewOriginCommand.Origin;
 import static net.mov51.periderm.LuckPermsHelper.getMetaValue;
 
