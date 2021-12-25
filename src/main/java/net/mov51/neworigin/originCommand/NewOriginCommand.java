@@ -1,5 +1,6 @@
 package net.mov51.neworigin.originCommand;
 
+import net.mov51.periderm.AspenMetaKey;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,11 +10,12 @@ import org.jetbrains.annotations.NotNull;
 
 import static net.mov51.neworigin.helpers.Locations.LocationToString;
 import static net.mov51.periderm.LuckPermsHelper.*;
-import static net.mov51.periderm.LuckPermsHelper.MetaKey.Origin;
 import static net.mov51.neworigin.NewOrigin.playerLoop;
 import static net.mov51.neworigin.originCommand.NewOriginCommand.commands.*;
 
 public class NewOriginCommand implements CommandExecutor {
+
+    public static AspenMetaKey Origin = new AspenMetaKey("NewOrigin_","Origin");
 
     public enum commands {
         NewOrigin("Origin","NewOrigin"),

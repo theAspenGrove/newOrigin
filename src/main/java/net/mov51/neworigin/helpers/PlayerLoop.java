@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import static net.mov51.neworigin.helpers.Locations.LocationFromString;
-import static net.mov51.periderm.LuckPermsHelper.MetaKey.Origin;
+import static net.mov51.neworigin.originCommand.NewOriginCommand.Origin;
 import static net.mov51.periderm.LuckPermsHelper.getMetaValue;
 
 public class PlayerLoop {
