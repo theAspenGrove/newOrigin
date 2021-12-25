@@ -13,9 +13,9 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import static net.mov51.neworigin.helpers.LpHelper.LocationFromString;
-import static net.mov51.neworigin.helpers.LpHelper.MetaKey.Origin;
-import static net.mov51.neworigin.helpers.LpHelper.getMetaValue;
+import static net.mov51.neworigin.helpers.Locations.LocationFromString;
+import static net.mov51.periderm.LuckPermsHelper.MetaKey.Origin;
+import static net.mov51.periderm.LuckPermsHelper.getMetaValue;
 
 public class PlayerLoop {
     protected NewOrigin plugin;
