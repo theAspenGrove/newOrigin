@@ -1,6 +1,7 @@
 package net.mov51.neworigin;
 
 import net.luckperms.api.LuckPerms;
+import net.mov51.neworigin.helpers.PlayerLoop;
 import net.mov51.neworigin.originCommand.NewOriginCommand;
 import net.mov51.neworigin.originCommand.NewOriginTabComplete;
 import org.bukkit.Bukkit;

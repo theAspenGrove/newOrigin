@@ -7,8 +7,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static net.mov51.neworigin.LpHelper.*;
-import static net.mov51.neworigin.LpHelper.MetaKey.Origin;
+import static net.mov51.neworigin.helpers.LpHelper.*;
+import static net.mov51.neworigin.helpers.LpHelper.MetaKey.Origin;
 import static net.mov51.neworigin.NewOrigin.playerLoop;
 import static net.mov51.neworigin.originCommand.NewOriginCommand.commands.*;
 

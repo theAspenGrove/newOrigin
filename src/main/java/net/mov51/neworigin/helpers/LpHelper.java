@@ -1,4 +1,4 @@
-package net.mov51.neworigin;
+package net.mov51.neworigin.helpers;
 
 import net.luckperms.api.cacheddata.CachedMetaData;
 import net.luckperms.api.model.user.User;

@@ -1,8 +1,9 @@
-package net.mov51.neworigin;
+package net.mov51.neworigin.helpers;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.mov51.neworigin.NewOrigin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -12,9 +13,9 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import static net.mov51.neworigin.LpHelper.LocationFromString;
-import static net.mov51.neworigin.LpHelper.MetaKey.Origin;
-import static net.mov51.neworigin.LpHelper.getMetaValue;
+import static net.mov51.neworigin.helpers.LpHelper.LocationFromString;
+import static net.mov51.neworigin.helpers.LpHelper.MetaKey.Origin;
+import static net.mov51.neworigin.helpers.LpHelper.getMetaValue;
 
 public class PlayerLoop {
     protected NewOrigin plugin;
