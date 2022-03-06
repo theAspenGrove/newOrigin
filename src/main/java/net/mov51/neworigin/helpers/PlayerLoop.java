@@ -13,9 +13,9 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import static net.mov51.periderm.Locations.LocationFromString;
+import static net.mov51.neworigin.NewOrigin.LPHelper;
+import static net.mov51.periderm.paper.Locations.LocationFromString;
 import static net.mov51.neworigin.originCommand.NewOriginCommand.Origin;
-import static net.mov51.periderm.LuckPermsHelper.getMetaValue;
 
 public class PlayerLoop {
     protected NewOrigin plugin;
@@ -59,7 +59,7 @@ public class PlayerLoop {
     }
 
     public static Location getOrigin(Player p){
-        return LocationFromString(getMetaValue(p,Origin));
+        return LocationFromString(LPHelper.getMetaValue(p,Origin));
     }
 
     public static Location CompareLocations(Location L2,Location L1){

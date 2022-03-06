@@ -1,6 +1,6 @@
 package net.mov51.neworigin.originCommand;
 
-import net.mov51.periderm.helperObjects.AspenMetaKey;
+import net.mov51.periderm.luckPerms.AspenMetaKey;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,10 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static net.mov51.neworigin.NewOrigin.chatHelper;
-import static net.mov51.periderm.Locations.*;
-import static net.mov51.periderm.LuckPermsHelper.*;
-import static net.mov51.neworigin.NewOrigin.playerLoop;
+import static net.mov51.neworigin.NewOrigin.*;
+import static net.mov51.periderm.paper.Locations.*;
+import static net.mov51.periderm.luckPerms.AspenLuckPermsHelper.*;
 import static net.mov51.neworigin.originCommand.NewOriginCommand.commands.*;
 
 public class NewOriginCommand implements CommandExecutor {
@@ -59,11 +58,11 @@ public class NewOriginCommand implements CommandExecutor {
                 String LString = LocationToString(l);
                 chatHelper.sendChat(p,"Your Origin is now set to " + PrettyBlockLocation(l) + "!");
                 chatHelper.sendChat(p,"Run /newOrigin watch to start watching it!");
-                setMetaValue(p,Origin,LString);
+                LPHelper.setMetaValue(p,Origin,LString);
                 return true;
             }else if(args[0].equalsIgnoreCase(get.SubCommand) && p.hasPermission(get.Permission)){
                 //get command
-                chatHelper.sendChat(p,"Your Origin is currently set to "+ PrettyBlockLocation(LocationFromString(getMetaValue(p,Origin))) + ".");
+                chatHelper.sendChat(p,"Your Origin is currently set to "+ PrettyBlockLocation(LocationFromString(LPHelper.getMetaValue(p,Origin))) + ".");
                 return true;
             }else if(args[0].equalsIgnoreCase(watch.SubCommand) && p.hasPermission(watch.Permission)){
                 //watch command

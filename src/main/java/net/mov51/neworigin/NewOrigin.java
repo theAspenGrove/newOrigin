@@ -4,7 +4,8 @@ import net.luckperms.api.LuckPerms;
 import net.mov51.neworigin.helpers.PlayerLoop;
 import net.mov51.neworigin.originCommand.NewOriginCommand;
 import net.mov51.neworigin.originCommand.NewOriginTabComplete;
-import net.mov51.periderm.ChatHelper;
+import net.mov51.periderm.luckPerms.AspenLuckPermsHelper;
+import net.mov51.periderm.paper.ChatHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,7 +15,7 @@ import java.util.logging.Logger;
 
 public final class NewOrigin extends JavaPlugin {
 
-    public static LuckPerms LPapi;
+    public static AspenLuckPermsHelper LPHelper;
     public static Logger logger;
     public static PlayerLoop playerLoop;
     public static ChatHelper chatHelper;
@@ -27,13 +28,9 @@ public final class NewOrigin extends JavaPlugin {
         //get Logger
         logger = NewOrigin.plugin.getLogger();
 
-        playerLoop = new PlayerLoop(this);
+        LPHelper = new AspenLuckPermsHelper(logger);
 
-        RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-        if (provider != null) {
-            LPapi = provider.getProvider();
-            logger.info("LuckPerms dependency loaded!");
-        }
+        playerLoop = new PlayerLoop(this);
 
         Objects.requireNonNull(this.getCommand("NewOrigin")).setExecutor(new NewOriginCommand());
         Objects.requireNonNull(getCommand("NewOrigin")).setTabCompleter(new NewOriginTabComplete());
