@@ -10,7 +10,7 @@ commands:
     permission: neworigin.origin
     usage: /NewOrigin
     permission-message: You lack the power to define your own origin.
-  NewOrigin set:
+  NewOrigin here:
     description: base plugin help <3
     permission: neworigin.set
     usage: /NewOrigin

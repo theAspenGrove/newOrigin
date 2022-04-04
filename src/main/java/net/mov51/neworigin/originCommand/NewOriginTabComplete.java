@@ -25,10 +25,10 @@ public class NewOriginTabComplete implements TabCompleter {
 
     public static List<String> whatCanRun(Player p){
         ArrayList<String> l = new ArrayList<>();
-        if(p.hasPermission(set.Permission)) l.add(set.SubCommand);
+        if(p.hasPermission(here.Permission)) l.add(here.SubCommand);
         if(p.hasPermission(get.Permission)) l.add(get.SubCommand);
         if(p.hasPermission(watch.Permission)) l.add(watch.SubCommand);
-        if(p.hasPermission(unWatch.Permission)) l.add(unWatch.SubCommand);
+        if(p.hasPermission(stop.Permission)) l.add(stop.SubCommand);
         return l;
     }
 }
