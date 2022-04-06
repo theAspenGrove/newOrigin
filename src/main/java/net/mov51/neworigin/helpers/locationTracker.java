@@ -13,8 +13,6 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static net.mov51.neworigin.helpers.PlayerLoop.*;
-
 public class locationTracker {
     public static HashMap<Player, ItemMeta> PlayerCompass = new HashMap<>();;
     public static void trackPlayers(Plugin plugin) {
