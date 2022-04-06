@@ -26,7 +26,7 @@ public class HandWatcherLoop {
                             compass = p.getInventory().getItemInMainHand();
                             if(((CompassMeta)compass.getItemMeta()).hasLodestone()){
                                 //add the player and the location their compass is attached to if their holding a compass with a lode stone
-                                PlayerCompass.put(p, ((CompassMeta)compass.getItemMeta()).getLodestone());
+                                PlayerCompass.put(p, compass.getItemMeta());
                             }
                         }else if(p.getInventory().getItemInOffHand().getType() == Material.COMPASS){
                             //off hand check
@@ -34,7 +34,7 @@ public class HandWatcherLoop {
                                 compass = p.getInventory().getItemInOffHand();
                                 if(((CompassMeta)compass.getItemMeta()).hasLodestone()){
                                     //add the player and the location their compass is attached to if their holding a compass with a lode stone
-                                    PlayerCompass.put(p, ((CompassMeta)compass.getItemMeta()).getLodestone());
+                                    PlayerCompass.put(p, compass.getItemMeta());
                                 }
                         }else{
                             //remove player from the list if they don't have a compass
