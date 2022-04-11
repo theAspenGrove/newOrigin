@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-import static net.mov51.neworigin.helpers.HandWatcherLoop.startWatching;
+import static net.mov51.neworigin.handHandlers.HandWatcherLoop.startWatching;
 import static net.mov51.neworigin.helpers.locationTracker.trackPlayers;
 
 public final class NewOrigin extends JavaPlugin {

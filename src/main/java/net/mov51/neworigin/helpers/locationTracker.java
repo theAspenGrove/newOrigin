@@ -3,18 +3,13 @@ package net.mov51.neworigin.helpers;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.meta.CompassMeta;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.HashMap;
-import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class locationTracker {
-    public static HashMap<Player, ItemMeta> PlayerCompass = new HashMap<>();;
+    public static HashMap<Player, HeldCompass> PlayerCompass = new HashMap<>();;
     public static void trackPlayers(Plugin plugin) {
 
         new BukkitRunnable() {
@@ -25,25 +20,25 @@ public class locationTracker {
                     //get relative location.
                     //we already know that the compassMeta has a lodestone attached
                     Location RelativeLocation =
-                            CompareLocations(Objects.requireNonNull(((CompassMeta) PlayerCompass.get(p)).getLodestone()), p.getLocation().toBlockLocation());
-                    int divisor = 0;
+                            CompareLocations(PlayerCompass.get(p).getTarget(), p.getLocation().toBlockLocation());
+//                    int divisor = 0;
                     if (RelativeLocation != null) {
                         //send that player an actionbar with the relative location if it isn't null
                         //will only be null if they aren't in the same world
-                        if(PlayerCompass.get(p).hasDisplayName()){
-                            Pattern pattern = Pattern.compile("\\((\\d*?)\\)");
-                            //confirmed compass has a display name
-                            Matcher matcher = pattern.matcher(Objects.requireNonNull(PlayerCompass.get(p).displayName()).toString());
-                            if (matcher.find())
-                            {
-                                divisor = Integer.parseInt(matcher.group(1));
-                            }
-                        }
+//                        if(PlayerCompass.get(p).hasDisplayName()){
+//                            Pattern pattern = Pattern.compile("\\((\\d*?)\\)");
+//                            //confirmed compass has a display name
+//                            Matcher matcher = pattern.matcher(Objects.requireNonNull(PlayerCompass.get(p).displayName()).toString());
+//                            if (matcher.find())
+//                            {
+//                                divisor = Integer.parseInt(matcher.group(1));
+//                            }
+//                        }
 
 
 
                         p.sendActionBar(LegacyComponentSerializer.legacyAmpersand().deserialize(
-                                colorCords(RelativeLocation.getBlockX(),divisor) + colorCords(RelativeLocation.getBlockY(),divisor) + colorCords(RelativeLocation.getBlockZ(),divisor)));
+                                colorCords(RelativeLocation.getBlockX(),PlayerCompass.get(p).getTargetRadii()) + colorCords(RelativeLocation.getBlockY(),PlayerCompass.get(p).getTargetRadii()) + colorCords(RelativeLocation.getBlockZ(),PlayerCompass.get(p).getTargetRadii())));
                     }
                 }
             }
