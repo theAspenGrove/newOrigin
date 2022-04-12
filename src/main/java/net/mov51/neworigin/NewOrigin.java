@@ -1,5 +1,6 @@
 package net.mov51.neworigin;
 
+import net.mov51.neworigin.handHandlers.ItemHeldWatcher;
 import net.mov51.periderm.luckPerms.AspenLuckPermsHelper;
 import net.mov51.periderm.paper.chat.AspenChatHelper;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,6 +30,7 @@ public final class NewOrigin extends JavaPlugin {
 
         trackPlayers(this);
         startWatching(this);
+        getServer().getPluginManager().registerEvents(new ItemHeldWatcher(), this);
 
         logger.info("Your Origins can now be REDEFINED!");
     }

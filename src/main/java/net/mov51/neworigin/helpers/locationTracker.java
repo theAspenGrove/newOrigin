@@ -21,22 +21,7 @@ public class locationTracker {
                     //we already know that the compassMeta has a lodestone attached
                     Location RelativeLocation =
                             CompareLocations(PlayerCompass.get(p).getTarget(), p.getLocation().toBlockLocation());
-//                    int divisor = 0;
                     if (RelativeLocation != null) {
-                        //send that player an actionbar with the relative location if it isn't null
-                        //will only be null if they aren't in the same world
-//                        if(PlayerCompass.get(p).hasDisplayName()){
-//                            Pattern pattern = Pattern.compile("\\((\\d*?)\\)");
-//                            //confirmed compass has a display name
-//                            Matcher matcher = pattern.matcher(Objects.requireNonNull(PlayerCompass.get(p).displayName()).toString());
-//                            if (matcher.find())
-//                            {
-//                                divisor = Integer.parseInt(matcher.group(1));
-//                            }
-//                        }
-
-
-
                         p.sendActionBar(LegacyComponentSerializer.legacyAmpersand().deserialize(
                                 colorCords(RelativeLocation.getBlockX(),PlayerCompass.get(p).getTargetRadii()) + colorCords(RelativeLocation.getBlockY(),PlayerCompass.get(p).getTargetRadii()) + colorCords(RelativeLocation.getBlockZ(),PlayerCompass.get(p).getTargetRadii())));
                     }
