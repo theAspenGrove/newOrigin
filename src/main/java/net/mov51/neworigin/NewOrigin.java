@@ -1,7 +1,6 @@
 package net.mov51.neworigin;
 
 import net.mov51.neworigin.handHandlers.ItemHeldWatcher;
-import net.mov51.periderm.AspenLuckPermsHelper;
 import net.mov51.periderm.chat.AspenChatHelper;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -12,7 +11,6 @@ import static net.mov51.neworigin.helpers.locationTracker.trackPlayers;
 
 public final class NewOrigin extends JavaPlugin {
 
-    public static AspenLuckPermsHelper LPHelper;
     public static Logger logger;
     public static AspenChatHelper chatHelper;
 
@@ -23,8 +21,6 @@ public final class NewOrigin extends JavaPlugin {
         plugin=this;
         //get Logger
         logger = NewOrigin.plugin.getLogger();
-
-        LPHelper = new AspenLuckPermsHelper(logger,"NewOrigin");
 
         chatHelper = new AspenChatHelper("&6&l[&2New Origin&6&l]&r");
 
