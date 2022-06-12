@@ -1,8 +1,0 @@
-[submodule "src/main/java/net/mov51/periderm/paper"]
-	path = src/main/java/net/mov51/periderm/paper
-	url = https://github.com/theAspenGrove/Periderm.git
-	branch = master
-[submodule "src/main/java/net/mov51/periderm/luckPerms"]
-	path = src/main/java/net/mov51/periderm/luckPerms
-	url = https://github.com/theAspenGrove/Periderm.git
-    branch = LuckPerms
